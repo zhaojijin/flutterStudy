@@ -3,7 +3,7 @@
  * @Author: zhaojijin
  * @LastEditors: Please set LastEditors
  * @Date: 2019-04-09 11:49:22
- * @LastEditTime: 2019-04-10 15:29:50
+ * @LastEditTime: 2019-04-11 20:17:09
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,8 +13,11 @@ class Routes extends StatelessWidget {
   List<ListItem> _listData;
   void initData() {
     _listData = [];
-
-    _listData.add(ListItem('customPainter', routesList[0], Icons.flag));
+    for (int i = 0; i < routesList.length; i++) {
+      if (i < titleList.length && i < iconList.length) {
+        _listData.add(ListItem(titleList[i], routesList[i], iconList[i]));
+      }
+    }
   }
 
   @override
